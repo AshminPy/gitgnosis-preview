@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gitgnosis — Infographic</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0d1117;color:#e6edf3;font-family:'Inter',system-ui,sans-serif}
+.stage{width:860px;margin:0 auto;padding:32px 16px 48px}
+.sec-title{text-align:center;color:#484f58;font-size:10px;text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;font-weight:600}
+.rule{border:none;border-top:1px solid #21262d;margin:36px 0}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.au{opacity:0;transform:translateY(12px);animation:fadeUp .5s ease forwards}
+.hero{text-align:center;margin-bottom:36px}
+.logo{font-size:36px;font-weight:800;letter-spacing:-0.5px}
+.logo .g{color:#3fb950}.logo .b{color:#58a6ff}
+.tagline{color:#484f58;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-top:6px}
+.stats{display:flex;justify-content:center;gap:0;margin:28px 0 0}
+.stat{text-align:center;flex:1;border-right:1px solid #21262d;padding:0 12px}
+.stat:last-child{border-right:none}
+.stat-n{font-size:30px;font-weight:800;line-height:1.1}
+.stat-l{font-size:9px;color:#484f58;text-transform:uppercase;letter-spacing:.8px;margin-top:3px}
+.pipe{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap}
+.node{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 14px;text-align:center;min-width:108px;opacity:0;transform:translateY(12px);animation:fadeUp .5s ease forwards}
+.node .ic{font-size:20px;margin-bottom:5px}
+.node .nt{font-size:12px;font-weight:700;color:#e6edf3;margin-bottom:2px}
+.node .ns{font-size:10px;color:#8b949e;line-height:1.3}
+.node.ng{border-color:#3fb950}.node.nb{border-color:#58a6ff}
+.node.np{border-color:#bc8cff}.node.no{border-color:#d29922}.node.nc{border-color:#39c5cf}
+.arr{color:#30363d;font-size:16px;padding:0 3px;flex-shrink:0;opacity:0;animation:fadeUp .3s ease forwards}
+.pvs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.pill{border-radius:20px;padding:6px 14px;font-size:11px;font-weight:700;border:1px solid;opacity:0;animation:fadeUp .4s ease forwards}
+.pill.pc{color:#d29922;border-color:#d29922;background:#d2992212}
+.pill.po{color:#3fb950;border-color:#3fb950;background:#3fb95012}
+.pill.pg{color:#58a6ff;border-color:#58a6ff;background:#58a6ff12}
+.pill.pp{color:#bc8cff;border-color:#bc8cff;background:#bc8cff12}
+.pill.pl{color:#39c5cf;border-color:#39c5cf;background:#39c5cf12}
+.screen-wrap{border-radius:16px;overflow:hidden;border:1px solid #30363d;background:#010409;box-shadow:0 0 0 1px #21262d;opacity:0;animation:fadeUp .6s 1.2s ease forwards}
+.screen-bar{background:#1c2128;padding:11px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #21262d}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
+.screen-title{color:#8b949e;font-size:12px;margin-left:6px;font-weight:500}
+.screen-body{padding:18px 22px;font-size:12.5px;font-family:'SF Mono','Fira Code',monospace;line-height:1.75;min-height:200px}
+.cl{opacity:0}.cdim{color:#484f58}.cg{color:#3fb950}.cc{color:#39c5cf}.cb{color:#58a6ff}.cp{color:#bc8cff}.co{color:#d29922}.cw{color:#e6edf3}.cbol{font-weight:700}
+.cursor{display:inline-block;width:7px;height:13px;background:#3fb950;animation:blink 1s step-end infinite;vertical-align:middle;margin-left:1px}
+.vdb-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.vdb-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 12px;opacity:0;animation:fadeUp .4s ease forwards}
+.vdb-card.rec{border-color:#3fb950}
+.vdb-name{font-size:13px;font-weight:700;color:#e6edf3;margin-bottom:4px}
+.vdb-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:8px;letter-spacing:.4px}
+.vdb-tag.local{background:#58a6ff18;color:#58a6ff;border:1px solid #58a6ff30}
+.vdb-tag.best{background:#3fb95018;color:#3fb950;border:1px solid #3fb95030}
+.vdb-tag.saas{background:#bc8cff18;color:#bc8cff;border:1px solid #bc8cff30}
+.vdb-tag.gcp{background:#d2992218;color:#d29922;border:1px solid #d2992230}
+.vdb-tag.pg{background:#39c5cf18;color:#39c5cf;border:1px solid #39c5cf30}
+.vdb-feat{font-size:10px;color:#8b949e;line-height:1.5}
+.vdb-feat span{display:block}
+
+/* Print: each section on its own page */
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  body { background: #0d1117 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .rule { page-break-after: always; break-after: page; }
+  .au, .node, .pill, .arr, .vdb-card, .screen-wrap { opacity: 1 !important; transform: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="hero au" style="animation-delay:.05s">
+    <div class="logo"><span class="g">Git</span><span class="b">gnosis</span></div>
+    <div class="tagline">Chat with your git repos · local rag · zero data egress</div>
+    <div class="stats">
+      <div class="stat au" style="animation-delay:.1s"><div class="stat-n" style="color:#3fb950" id="sr">0</div><div class="stat-l">Repos indexed</div></div>
+      <div class="stat au" style="animation-delay:.18s"><div class="stat-n" style="color:#58a6ff" id="sc">0</div><div class="stat-l">Code chunks</div></div>
+      <div class="stat au" style="animation-delay:.26s"><div class="stat-n" style="color:#bc8cff">5</div><div class="stat-l">LLM providers</div></div>
+      <div class="stat au" style="animation-delay:.34s"><div class="stat-n" style="color:#d29922">0 KB</div><div class="stat-l">Data egress (code)</div></div>
+      <div class="stat au" style="animation-delay:.42s"><div class="stat-n" style="color:#39c5cf">&lt;2s</div><div class="stat-l">Avg answer latency</div></div>
+    </div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="sec-title">Index pipeline</div>
+  <div class="pipe">
+    <div class="node ng" style="animation-delay:.2s"><div class="ic">🗂</div><div class="nt">Git repos</div><div class="ns">local + GitHub org</div></div>
+    <div class="arr" style="animation-delay:.42s">→</div>
+    <div class="node nb" style="animation-delay:.5s"><div class="ic">✂️</div><div class="nt">Chunker</div><div class="ns">structure-aware splits</div></div>
+    <div class="arr" style="animation-delay:.72s">→</div>
+    <div class="node np" style="animation-delay:.8s"><div class="ic">🧠</div><div class="nt">Embedder</div><div class="ns">all-MiniLM-L6-v2 local</div></div>
+    <div class="arr" style="animation-delay:1.02s">→</div>
+    <div class="node no" style="animation-delay:1.1s"><div class="ic">🗄</div><div class="nt">VectorDB</div><div class="ns">pluggable store</div></div>
+    <div class="arr" style="animation-delay:1.32s">→</div>
+    <div class="node nc" style="animation-delay:1.4s"><div class="ic">💬</div><div class="nt">LLM answer</div><div class="ns">cited from your code</div></div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="sec-title">Supported LLM providers</div>
+  <div class="pvs">
+    <div class="pill pc" style="animation-delay:.1s">◆ Anthropic Claude</div>
+    <div class="pill po" style="animation-delay:.18s">◉ OpenAI GPT-4o</div>
+    <div class="pill pg" style="animation-delay:.26s">✦ Google Gemini</div>
+    <div class="pill pp" style="animation-delay:.34s">⬡ GitHub Copilot</div>
+    <div class="pill pl" style="animation-delay:.42s">⬤ Ollama · 100% local</div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="sec-title">Live chat demo</div>
+  <div class="screen-wrap">
+    <div class="screen-bar">
+      <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+      <span class="screen-title">gitgnosis chat — aws-assistant · elastic-agent-ec2 · cert-status +15 more</span>
+    </div>
+    <div class="screen-body" id="term"></div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="sec-title">Choose your VectorDB — scales from laptop to production</div>
+  <div class="vdb-grid">
+    <div class="vdb-card" style="animation-delay:.1s">
+      <div class="vdb-name">ChromaDB</div>
+      <div class="vdb-tag local">Local dev</div>
+      <div class="vdb-feat"><span>HNSW cosine index</span><span>Zero config setup</span><span>~2M vectors</span><span style="color:#484f58">Single user only</span></div>
+    </div>
+    <div class="vdb-card rec" style="animation-delay:.18s">
+      <div class="vdb-name">Qdrant</div>
+      <div class="vdb-tag best">★ 500+ repos</div>
+      <div class="vdb-feat"><span>Dense + sparse hybrid</span><span>GKE-ready</span><span>10M+ vectors</span><span style="color:#3fb950">Recommended</span></div>
+    </div>
+    <div class="vdb-card" style="animation-delay:.26s">
+      <div class="vdb-name">Pinecone</div>
+      <div class="vdb-tag saas">Serverless</div>
+      <div class="vdb-feat"><span>Managed SaaS</span><span>Hybrid search</span><span>Unlimited scale</span><span style="color:#484f58">Data leaves infra</span></div>
+    </div>
+    <div class="vdb-card" style="animation-delay:.34s">
+      <div class="vdb-name">Vertex AI</div>
+      <div class="vdb-tag gcp">GCP native</div>
+      <div class="vdb-feat"><span>Fully managed</span><span>IAM integrated</span><span>Unlimited scale</span><span style="color:#484f58">Batch upsert only</span></div>
+    </div>
+    <div class="vdb-card" style="animation-delay:.42s">
+      <div class="vdb-name">pgvector</div>
+      <div class="vdb-tag pg">PostgreSQL</div>
+      <div class="vdb-feat"><span>Existing PG stack</span><span>CloudSQL-ready</span><span>~1M vectors</span><span style="color:#484f58">No hybrid search</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function cnt(el,t,d=1200){const s=performance.now();(function f(n){const p=Math.min((n-s)/d,1),e=p<.5?2*p*p:-1+(4-2*p)*p;el.textContent=Math.round(e*t);if(p<1)requestAnimationFrame(f)})(s)}
+setTimeout(()=>{cnt(document.getElementById('sr'),18);cnt(document.getElementById('sc'),1037)},300);
+const T=document.getElementById('term');
+const lines=[
+  {d:200,h:'<span class="cdim">$ </span><span class="cg cbol">gitgnosis</span> <span class="cw">index --org AshminPy</span>'},
+  {d:650,h:'<span class="cdim">  Discovering 18 repos…</span>'},
+  {d:900,h:'<span class="cg">  ✓</span> <span class="cw">aws-assistant</span> <span class="cdim">42 files → 284 chunks</span>'},
+  {d:1050,h:'<span class="cg">  ✓</span> <span class="cw">elastic-agent-ec2</span> <span class="cdim">18 files → 156 chunks</span>'},
+  {d:1200,h:'<span class="cdim">  … 16 more repos …</span>'},
+  {d:1380,h:'<span class="cw cbol">  Done  18 repos → 1 037 chunks  ·  VectorDB: ChromaDB (local)</span>'},
+  {d:1800,h:''},
+  {d:1900,h:'<span class="cdim">$ </span><span class="cg cbol">gitgnosis</span> <span class="cw">chat</span>'},
+  {d:2350,h:'<span class="cc cbol">You</span> <span class="cdim">›</span> <span class="cw">how does aws-assistant handle approval flows?</span>'},
+  {d:2550,h:'<span class="cdim">  Thinking…</span>'},
+  {d:3100,h:'<span class="cg cbol">◆ Gitgnosis</span> <span class="cdim">──────────────────────────────────────</span>'},
+  {d:3180,h:'<span class="cw">Approval flows live in</span> <span class="cb">aws-assistant/agent/main.py</span>'},
+  {d:3260,h:'<span class="cw">via</span> <span class="cp">mandatory_approval_required()</span><span class="cw">. Before any mutating</span>'},
+  {d:3340,h:'<span class="cw">AWS call, it posts a Teams alert and polls every 30 s.</span>'},
+  {d:3480,h:''},
+  {d:3540,h:'<span class="co cbol">  1.</span> <span class="cw">Action detected → Teams notification sent</span>'},
+  {d:3660,h:'<span class="co cbol">  2.</span> <span class="cw">Poll loop waits for approve/deny (10 min timeout)</span>'},
+  {d:3780,h:'<span class="co cbol">  3.</span> <span class="cw">Approved → executes; Denied → audit log + abort</span>'},
+  {d:3940,h:''},
+  {d:3980,h:'<span class="cdim">  📎 aws-assistant/agent/main.py  lines 142–189</span>'},
+  {d:4350,h:'<span class="cc cbol">You</span> <span class="cdim">›</span> <span class="cursor"></span>'},
+];
+lines.forEach(({d,h})=>{
+  setTimeout(()=>{
+    const old=T.querySelector('.cursor');if(old)old.parentElement.remove();
+    if(h){const div=document.createElement('div');div.className='cl';div.innerHTML=h;div.style.cssText='opacity:0;animation:fadeUp .2s ease forwards';T.appendChild(div);}
+    else T.appendChild(document.createElement('br'));
+    T.scrollTop=T.scrollHeight;
+  },d);
+});
+</script>
+</body>
+</html>
